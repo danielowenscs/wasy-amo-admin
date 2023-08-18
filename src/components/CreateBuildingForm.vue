@@ -18,22 +18,32 @@
   </template>
   
   <script>
+  import { addBuilding } from '../firebase.js'; // Update the path
+  
   export default {
     name: 'CreateBuildingForm',
     data() {
-        return {
-            buildingAddress: '',
-            email: '',
-            phone: ''
-        }
+      return {
+        buildingAddress: '',
+        email: '',
+        phone: ''
+      };
     },
     methods: {
       submitForm() {
         // Here you can handle the form submission, e.g., send data to a server
         console.log('Form submitted:', {
           buildingAddress: this.buildingAddress,
-          contact: this.contact
+          email: this.email,
+          phone: this.phone
         });
+  
+        // Call the database function to add the building
+        addBuilding({
+          address: this.buildingAddress,
+          email: this.email,
+          phone: this.phone
+        })
       }
     }
   };

@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection } from "firebase/firestore"; 
+import { addDoc } from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDBCLsGcyb98u38jwvjiv9IDvVvkzQVGZU",
@@ -14,5 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// collections
-export const buildingCollection = collection(db, 'buildings');
+const buildingCollection = collection(db, 'buildingCollection')
+
+export function addBuilding(buildingData) {
+    addDoc(buildingCollection, buildingData);
+}
