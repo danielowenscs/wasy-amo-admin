@@ -1,16 +1,59 @@
 <template>
-    <div>Welcome to the homepage</div> 
-    <button @click="changePage('buildings')">Buildings</button>
-
+  <div>Welcome to the homepage</div>
+  <div class="card" @click="changePage('buildings')">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g data-name="Layer 2">
+          <g data-name="home">
+            <rect width="24" height="24" opacity="0" />
+            <rect x="10" y="14" width="4" height="7" />
+            <path
+              d="M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2H8v-9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v9h3.11A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44z"
+            />
+          </g>
+        </g>
+      </svg>
+      <h2>Buildings</h2>
+    </div>
+  </div>
 </template>
 <script>
-
+//import HomeIcon from '../assets/home.svg';
 export default {
-  name: 'HomePage',
+  name: "HomePage",
+  components: {
+    //HomeIcon
+  },
   methods: {
     changePage(path) {
-      this.$router.push('/' + path);
+      this.$router.push("/" + path);
     },
   },
 };
 </script>
+<style>
+.card {
+  height: 256px;
+  width: 256px;
+  background-color: #519872;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+.card * {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  color: #34252F;
+}
+.card * * {
+  margin: 4px !important;
+}
+svg {
+  width: 64px;
+  height: 64px;
+  fill: #34252F;
+}
+</style>
