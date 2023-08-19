@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './views/HomePage.vue'; // Import your views
 import Buildings from './views/Buildings.vue';
-
+import Calendar from './views/Calendar.vue';
 const routes = [
   {
     path: '/',
@@ -11,6 +11,10 @@ const routes = [
     path: '/buildings',
     component: Buildings,
   },
+  {
+    path: '/calendar',
+    component: Calendar
+  }
 ];
 
 const router = createRouter({
