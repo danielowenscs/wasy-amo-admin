@@ -14,6 +14,9 @@ const routes = [
   {
     path: '/calendar',
     component: Calendar
+  },
+  {
+
   }
 ];
 

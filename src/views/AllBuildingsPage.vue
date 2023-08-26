@@ -13,22 +13,21 @@
       </teleport>
     </div>
     <div v-for="building in buildings" :key="building.id">
-      <!-- <div @click="changePage('building')">{{ building.id }} </div> -->
+      <BuildingCard :buildingName="building.address" :buildingId="building.id"/>
     </div>
-    <BuildingPage/>
   </div>
 </template>
 
 <script>
 import CreateBuildingForm from "../components/CreateBuildingForm.vue";
 import { getBuildings } from "../firebase.js";
-import { BuildingPage } from "./BuildingPage.vue";
+import BuildingCard from "../components/BuildingCard.vue";
 
 export default {
   name: "AllBuildingsPage",
   components: {
     CreateBuildingForm,
-    BuildingPage,
+    BuildingCard
   },
   data() {
     return {
