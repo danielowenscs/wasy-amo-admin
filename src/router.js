@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './views/HomePage.vue'; // Import your views
-import Buildings from './views/Buildings.vue';
+import AllBuildingsPage from './views/AllBuildingsPage.vue';
 import Calendar from './views/Calendar.vue';
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/buildings',
-    component: Buildings,
+    component: AllBuildingsPage,
   },
   {
     path: '/calendar',
